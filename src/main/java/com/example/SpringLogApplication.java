@@ -13,6 +13,9 @@ public class SpringLogApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringLogApplication.class, args);
 
-		log.debug("Ngon {}: {}", "hay that", 200000l);	
+		log.info("Ngon {}: {}", "hay that", 200000l);
+		
+		if (log.isDebugEnabled())
+			log.debug("Hay day");
 	}
 }
