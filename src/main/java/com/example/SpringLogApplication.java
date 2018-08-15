@@ -17,5 +17,20 @@ public class SpringLogApplication {
 		
 		if (log.isDebugEnabled())
 			log.debug("Hay day");
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				for(int i = 0; i < 1000; i++){ 
+					log.info("Testing...");
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}).start();
 	}
 }
